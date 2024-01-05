@@ -1,44 +1,37 @@
-{\rtf1\ansi\ansicpg1251\cocoartf2759
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
-{\colortbl;\red255\green255\blue255;\red255\green255\blue255;}
-{\*\expandedcolortbl;;\cspthree\c100000\c100000\c100000;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww25260\viewh15640\viewkind0
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+1.Создать таблицы реакций и комментариев
 
-\f0\fs26 \cf2 1.\uc0\u1057 \u1086 \u1079 \u1076 \u1072 \u1090 \u1100  \u1090 \u1072 \u1073 \u1083 \u1080 \u1094 \u1099  \u1088 \u1077 \u1072 \u1082 \u1094 \u1080 \u1081  \u1080  \u1082 \u1086 \u1084 \u1084 \u1077 \u1085 \u1090 \u1072 \u1088 \u1080 \u1077 \u1074 \
-\
-CREATE TABLE reactions (\
-   reaction_id int,\
-   user_id int,\
-   video_id int,\
-   created_at timestamp,\
- --type_reaction ?(\uc0\u1087 \u1086 \u1085 \u1080 \u1084 \u1072 \u1102 , \u1095 \u1090 \u1086  \u1076 \u1086 \u1083 \u1078 \u1077 \u1085  \u1073 \u1099 \u1090 \u1100  \u1074 \u1080 \u1076  \u1088 \u1077 \u1072 \u1082 \u1094 \u1080 \u1080 , \u1085 \u1086  \u1087 \u1086 \u1082 \u1072  \u1085 \u1077  \u1079 \u1085 \u1072 \u1102  \u1082 \u1072 \u1082 \u1080 \u1084  \u1090 \u1080 \u1087 \u1086 \u1084  \u1101 \u1090 \u1086  \u1087 \u1086 \u1083 \u1077  \u1086 \u1073 \u1086 \u1079 \u1085 \u1072 \u1095 \u1080 \u1090 \u1100 )\
-\
-);\
-\
-CREATE TABLE comments (\
-    comment_id int,\
-    created_at timestamp,\
-    user_id int,\
-    video_id int,\
-    comment_text text\
-    \
-);\
-\
-2.\uc0\u1044 \u1086 \u1073 \u1072 \u1074 \u1080 \u1090 \u1100  \u1085 \u1077 \u1089 \u1082 \u1086 \u1083 \u1100 \u1082 \u1086  \u1079 \u1072 \u1087 \u1080 \u1089 \u1077 \u1081  \u1074  \u1082 \u1072 \u1078 \u1076 \u1091 \u1102  \u1090 \u1072 \u1073 \u1083 \u1080 \u1094 \u1091  \u1074 \u1099 \u1096 \u1077 \
-\
-INSERT INTO reactions (reaction_id, user_id, comment_id, created_at)\
-VALUES\
-     (1, 1, 1,CURRENT_TIMESTAMP),\
-     (2, 3, 5,CURRENT_TIMESTAMP),\
-     (3, 4, 4,CURRENT_TIMESTAMP),\
-     (4, 1, 5,CURRENT_TIMESTAMP),\
-     (5, 3, 3,CURRENT_TIMESTAMP)\
-\
-INSERT INTO comments (comment_id, created_at, user_id, video_id, comment_text)\
-VALUES\
-     (1,CURRENT_TIMESTAMP, 1, 1, 'xzcvbnm'),\
-     (2,CURRENT_TIMESTAMP, 3, 5, 'mnbvcxsdfghjk'),\
-     (3,CURRENT_TIMESTAMP, 4, 2, 'rtyuioplkjhg'),\
-     (4,CURRENT_TIMESTAMP, 2, 5, 'mnbvcxdfghujiko'),\
-     (5,CURRENT_TIMESTAMP, 3, 3, 'fegrthjklujyh')}
+CREATE TABLE reactions (
+   reaction_id int,
+   user_id int,
+   video_id int,
+   created_at timestamp,
+ --type_reaction ?(понимаю, что должен быть вид реакции, но пока не знаю каким типом это поле обозначить)
+
+);
+
+CREATE TABLE comments (
+    comment_id int,
+    created_at timestamp,
+    user_id int,
+    video_id int,
+    comment_text text
+    
+);
+
+2.Добавить несколько записей в каждую таблицу выше
+
+INSERT INTO reactions (reaction_id, user_id, comment_id, created_at)
+VALUES
+     (1, 1, 1,CURRENT_TIMESTAMP),
+     (2, 3, 5,CURRENT_TIMESTAMP),
+     (3, 4, 4,CURRENT_TIMESTAMP),
+     (4, 1, 5,CURRENT_TIMESTAMP),
+     (5, 3, 3,CURRENT_TIMESTAMP)
+
+INSERT INTO comments (comment_id, created_at, user_id, video_id, comment_text)
+VALUES
+     (1,CURRENT_TIMESTAMP, 1, 1, 'xzcvbnm'),
+     (2,CURRENT_TIMESTAMP, 3, 5, 'mnbvcxsdfghjk'),
+     (3,CURRENT_TIMESTAMP, 4, 2, 'rtyuioplkjhg'),
+     (4,CURRENT_TIMESTAMP, 2, 5, 'mnbvcxdfghujiko'),
+     (5,CURRENT_TIMESTAMP, 3, 3, 'fegrthjklujyh')
